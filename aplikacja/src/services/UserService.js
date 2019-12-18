@@ -1,20 +1,19 @@
-export const fetchUser = () => {
+// export const fetchUser = (props) => {
 
-    const {math: { params }} = this.props
+//     fetch(`https://jsonplaceholder.typicode.com/users/${props.match.params.id}`)
+//         .then(response => {
+//             if (response.ok) {
+//                 return response.json();
+//             }
+//         })
+//         .then(user => {
+//                 return {
+//                   id: user.id,
+//                   name: user.name,
+//                   username: user.username,
+//                 };
+//             }
+//         )
 
-    fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-        })
-        .then(user => {
-                return {
-                  id: user.id,
-                  name: user.name,
-                  username: user.username,
-                };
-            }
-        )
+// }
 
-}

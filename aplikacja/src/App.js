@@ -9,8 +9,6 @@ import Appbar from "./components/Appbar";
 import Navbar from "./components/Navbar";
 import UserPanel from "./components/UserPanel"
 
-
-
 const App = () => {
   return (
     <Router>
