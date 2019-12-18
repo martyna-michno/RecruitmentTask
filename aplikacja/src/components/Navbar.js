@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import { fetchUsers } from "../services/UserService";
+import { fetchAllUsers } from "../services/AllUsersService";
 
 class Navbar extends React.Component {
   state = {
@@ -9,7 +9,7 @@ class Navbar extends React.Component {
   };
 
   componentDidMount() {
-    fetchUsers().then(users => {
+    fetchAllUsers().then(users => {
       this.setState({
         users
       });
@@ -20,10 +20,11 @@ class Navbar extends React.Component {
     return (
       <nav className={styles.sidenav}>
         <ul className={styles.links}>
+          <li><NavLink activeClassName={styles.active} to={"/home"}>HOME</NavLink></li>
           {this.state.users.map(user => {
             return (
               <li>
-                <NavLink activeClassName={styles.active} to={`users/${user.id}/albums`}
+                <NavLink activeClassName={styles.active} to={`/users/${user.id}/albums`}
                   key={user.id}>
                   {user.name}
                 </NavLink>
