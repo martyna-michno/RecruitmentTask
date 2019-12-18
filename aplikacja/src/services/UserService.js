@@ -1,4 +1,4 @@
-// export const fetchUser = (props) => {
+// export const fetchUser = () => {
 
 //     fetch(`https://jsonplaceholder.typicode.com/users/${props.match.params.id}`)
 //         .then(response => {

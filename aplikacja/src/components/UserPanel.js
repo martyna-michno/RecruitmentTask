@@ -3,25 +3,29 @@ import React from 'react';
 
 class UserPanel extends React.Component {
 
-    state = {
-        user: {}
-      };
+  constructor(props) {
+    super(props)
 
-    componentDidMount() {
+    this.state = {
+      user: {}
+    };
+  }
+  
+  componentDidMount() {
 
-        fetch(`https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`)
-          .then(({ data: user }) => {
-            this.setState({ user });
-          });
+    fetch(`https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`)
+      .then(({ data: user }) => {
+        this.setState({ user });
+      });
 
-       }
+  }
 
 
-    render(){
-        return(
-        <h1>Hello everyone, my name is {this.state.user.name}, what about you?</h1>
-        )
-        }
+  render() {
+    return (
+      <h1>Hello everyone, my name is {this.state.user.name}, what about you?</h1>
+    )
+  }
 }
 
 export default UserPanel
