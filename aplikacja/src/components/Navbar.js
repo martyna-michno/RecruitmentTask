@@ -23,7 +23,7 @@ class Navbar extends React.Component {
           {this.state.users.map(user => {
             return (
               <li>
-                <NavLink activeClassName={styles.active} to={`users/${user.id}/albums`}>"
+                <NavLink activeClassName={styles.active} to={`users/${user.id}/albums`}
                   key={user.id}>
                   {user.name}
                 </NavLink>
