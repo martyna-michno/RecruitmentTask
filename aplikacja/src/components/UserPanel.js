@@ -3,6 +3,7 @@ import fetchUser from "../services/UserService";
 import { fetchAlbums } from "../services/AlbumsService";
 import { NavLink } from "react-router-dom";
 import styles from "./UserPanel.module.css";
+import { ShowLoader } from "./Loader.js"
 class UserPanel extends React.Component {
 
   constructor(props) {
@@ -41,20 +42,20 @@ class UserPanel extends React.Component {
           {this.state.albums.map(album => {
             return (
               <li>
-              <NavLink to={`/users/${this.state.user.id}/albums/${album.albumId}`}
-              key={album.albumId}
-              className={styles.album}
-              activeClassName={styles.active}>
-              {album.name}
-            </NavLink>
-            </li>
+                <NavLink to={`/users/${this.state.user.id}/albums/${album.albumId}`}
+                  key={album.albumId}
+                  className={styles.album}
+                  activeClassName={styles.active}>
+                  {album.name}
+                </NavLink>
+              </li>
             );
           })
           }
         </ul>
       </main>
       :
-      <main className={"main"}><h1>looooooading...</h1></main>
+      ShowLoader()
   }
 }
 

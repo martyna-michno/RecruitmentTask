@@ -1,5 +1,6 @@
 import React from 'react'
 import { fetchPhotos } from '../services/PhotosService';
+import { ShowLoader } from "./Loader.js"
 
 class PhotosPanel extends React.Component {
 
@@ -29,8 +30,8 @@ class PhotosPanel extends React.Component {
                 })}
             </main>
             :
-            <main className={"main"}><h1>looooooading...</h1></main>
-        }
-      }
+            ShowLoader()
+    }
+}
 
 export default PhotosPanel
