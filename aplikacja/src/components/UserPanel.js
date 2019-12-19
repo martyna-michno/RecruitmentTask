@@ -1,6 +1,6 @@
 import React from 'react';
 import fetchUser from "../services/UserService";
-import {fetchAlbums} from "../services/AlbumsService";
+import { fetchAlbums } from "../services/AlbumsService";
 
 class UserPanel extends React.Component {
 
@@ -14,19 +14,21 @@ class UserPanel extends React.Component {
   }
 
   componentDidMount() {
-    fetchUser(this.props.match.params.id).then((user) => {
-      this.setState({ user });
-    });
-    fetchAlbums(this.props.match.params.id).then((albums) => {
-      this.setState({ albums });
-    });
+    this.loadData(this.props.match.params.id)
   }
 
-  componentWillUpdate() {
-    fetchUser(this.props.match.params.id).then((user) => {
+  componentWillReceiveProps(props) {
+    if (this.props.match.params.id !== props.match.params.id) {
+      this.loadData(props.match.params.id)
+    }
+  }
+
+
+  loadData(id) {
+    fetchUser(id).then((user) => {
       this.setState({ user });
     });
-    fetchAlbums(this.props.match.params.id).then((albums) => {
+    fetchAlbums(id).then((albums) => {
       this.setState({ albums });
     });
   }
@@ -34,16 +36,17 @@ class UserPanel extends React.Component {
   render() {
     return this.state.user && this.state.albums ?
       <main className={"main"}>
-        <h1>Hello everyone, my name is {this.state.user.name}, what about you?
-{this.state.albums.map(album => {
-          return (
-            <li key={album.albumId}>{album.name}</li>
-          );
-        })
+        <h1>Hello everyone, my name is {this.state.user.name}, what about you?</h1><ul>
+          {this.state.albums.map(album => {
+            return (
+              <li key={album.albumId}>{album.name}</li>
+            );
+          })
           }
-        </h1>
+        </ul>
       </main>
-      : <main className={"main"}><h1>looooooading...</h1></main>
+      :
+      <main className={"main"}><h1>looooooading...</h1></main>
   }
 }
 
