@@ -7,7 +7,6 @@ class PhotosPanel extends React.Component {
         super(props)
 
         this.state = {
-            photos: []
         };
     }
 
@@ -20,6 +19,7 @@ class PhotosPanel extends React.Component {
     render() {
         return this.state.photos ?
             <main className={"main"}>
+                <h1>Hello, check photos!</h1>
                 {this.state.photos.map(photo => {
                     return (
                         <li>
@@ -30,8 +30,7 @@ class PhotosPanel extends React.Component {
             </main>
             :
             <main className={"main"}><h1>looooooading...</h1></main>
-
-    }
-}
+        }
+      }
 
 export default PhotosPanel
