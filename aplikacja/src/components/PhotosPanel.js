@@ -37,8 +37,8 @@ class PhotosPanel extends React.Component {
     render() {
         return this.state.photos ?
             <article className={"article"}>
-                <h1>Hello, check photos!</h1>
-                <Card.Group>
+                <h1 style={{textAlign: "center"}}>Hello, check photos!</h1>
+                <Card.Group centered>
                 {this.state.photos.map(photo => (
                   <Photo
                     key={photo.photoId}
@@ -48,13 +48,6 @@ class PhotosPanel extends React.Component {
                   />
                 ))}
               </Card.Group>
-                {/* {this.state.photos.map(photo => {
-                    return (
-                        <li>
-                            {photo.name}
-                        </li>
-                    );
-                })} */}
             </article>
 
             :
