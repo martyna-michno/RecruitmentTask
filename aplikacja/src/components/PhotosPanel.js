@@ -5,7 +5,6 @@ import { Card, Image} from 'semantic-ui-react'
 
 const Photo = props => {
     const {
-      photoId,
       picture,
       name
     } = props;
@@ -13,7 +12,7 @@ const Photo = props => {
     return (
       <Card>
         <Image src={picture} wrapped ui={false} />
-        <Card.Content>
+        <Card.Content textAlign="center">
           <Card.Header>{name}</Card.Header>
         </Card.Content>
       </Card>
