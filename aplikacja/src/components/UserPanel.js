@@ -1,5 +1,5 @@
 import React from 'react';
-// import { fetchUser } from "../services/UserService";
+import fetchUser from "../services/UserService";
 
 class UserPanel extends React.Component {
 
@@ -9,38 +9,26 @@ class UserPanel extends React.Component {
     this.state = {
     };
   }
-  
+
   componentDidMount() {
-    fetch(`https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`)
-    .then(response => {
-      if (response.ok) {
-          return response.json();
-      }
-  })
-      .then((user) => {
-        this.setState({ user });
-      });
+    fetchUser(this.props.match.params.id).then((user) => {
+      this.setState({ user });
+    });
 
   }
 
-  componentWillUpdate(){
-    fetch(`https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`)
-    .then(response => {
-      if (response.ok) {
-          return response.json();
-      }
-  })
-      .then((user) => {
-        this.setState({ user });
-      });
+  componentWillUpdate() {
+    fetchUser(this.props.match.params.id).then((user) => {
+      this.setState({ user });
+    });
 
   }
 
-    render() {
-        return this.state.user ?
-          <main className={"main"}> <h1>Hello everyone, my name is {this.state.user.name}, what about you?</h1></main>
-        : <main className={"main"}><h1>looooooooooooading...</h1></main>
-      }
+  render() {
+    return this.state.user ?
+      <main className={"main"}> <h1>Hello everyone, my name is {this.state.user.name}, what about you?</h1></main>
+      : <main className={"main"}><h1>looooooooooooading...</h1></main>
+  }
 }
 
 export default UserPanel

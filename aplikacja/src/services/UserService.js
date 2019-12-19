@@ -1,19 +1,19 @@
-// export const fetchUser = () => {
+function fetchUser(id) {
 
-//     fetch(`https://jsonplaceholder.typicode.com/users/${props.match.params.id}`)
-        // .then(response => {
-        //     if (response.ok) {
-        //         return response.json();
-        //     }
-        // })
-//         .then(user => {
-//                 return {
-//                   id: user.id,
-//                   name: user.name,
-//                   username: user.username,
-//                 };
-//             }
-//         )
+    return fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(user => {
+                return {
+                  id: user.id,
+                  name: user.name,
+                  username: user.username,
+                };
+            }
+        )
+}
 
-// }
-
+export default fetchUser
