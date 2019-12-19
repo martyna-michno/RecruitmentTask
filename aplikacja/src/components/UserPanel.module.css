@@ -1,0 +1,10 @@
+.album {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+  }
+
+  .active{
+      text-decoration: underline;
+  }

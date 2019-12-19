@@ -1,7 +1,8 @@
 import React from 'react';
 import fetchUser from "../services/UserService";
 import { fetchAlbums } from "../services/AlbumsService";
-
+import { NavLink } from "react-router-dom";
+import styles from "./UserPanel.module.css";
 class UserPanel extends React.Component {
 
   constructor(props) {
@@ -39,7 +40,14 @@ class UserPanel extends React.Component {
         <h1>Hello everyone, my name is {this.state.user.name}, what about you?</h1><ul>
           {this.state.albums.map(album => {
             return (
-              <li key={album.albumId}>{album.name}</li>
+              <li>
+              <NavLink to={`/users/${this.state.user.id}/albums/${album.albumId}`}
+              key={album.albumId}
+              className={styles.album}
+              activeClassName={styles.active}>
+              {album.name}
+            </NavLink>
+            </li>
             );
           })
           }
