@@ -1,5 +1,5 @@
 export const fetchPhotos = (albumId) => {
-    return fetch(`onplaceholder.typicode.com/photos?albumId=${albumId}`)
+    return fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
         .then(response => {
             if (response.ok) {
                 return response.json()
@@ -9,7 +9,7 @@ export const fetchPhotos = (albumId) => {
             return photos.map(photo => {
                 return {
                     photoId: photo.id,
-                    name: photo.name,
+                    name: photo.title,
                     url: photo.url,
                     tinyUrl: photo.thumbnailUrl
                 }
