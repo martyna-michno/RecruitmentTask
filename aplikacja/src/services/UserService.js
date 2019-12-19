@@ -1,11 +1,11 @@
 // export const fetchUser = () => {
 
 //     fetch(`https://jsonplaceholder.typicode.com/users/${props.match.params.id}`)
-//         .then(response => {
-//             if (response.ok) {
-//                 return response.json();
-//             }
-//         })
+        // .then(response => {
+        //     if (response.ok) {
+        //         return response.json();
+        //     }
+        // })
 //         .then(user => {
 //                 return {
 //                   id: user.id,
