@@ -5,13 +5,13 @@ export const fetchAlbums = id => {
                 return response.json();
             }
         })
-        .then(data => {
-            return data.map(album => {
-            return {
-                id: album.userId,
-                albumId: album.id,
-                name: album.title
-            }}
-            )
+        .then(albums => {
+            return albums.map(album => {
+                return {
+                    id: album.userId,
+                    albumId: album.id,
+                    name: album.title
+                }
+            })
         })
 }
