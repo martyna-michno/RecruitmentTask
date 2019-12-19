@@ -37,25 +37,29 @@ class UserPanel extends React.Component {
 
   render() {
     return this.state.user && this.state.albums ?
-      <main className={"main"}>
-        <h1>Hello everyone, my name is {this.state.user.name}, what about you?</h1><ul>
-          {this.state.albums.map(album => {
-            return (
-              <li>
-                <NavLink to={`/users/${this.state.user.id}/albums/${album.albumId}`}
-                  key={album.albumId}
-                  className={styles.album}
-                  activeClassName={styles.active}>
-                  {album.name}
-                </NavLink>
-              </li>
-            );
-          })
-          }
-        </ul>
-      </main>
+        <article className={"article"}>
+          <h1>Hello everyone, my name is {this.state.user.name}, what about you?</h1><ul>
+            {this.state.albums.map(album => {
+              return (
+                <li>
+                  <NavLink to={`/users/${this.state.user.id}/albums/${album.albumId}`}
+                    key={album.albumId}
+                    className={styles.album}
+                    activeClassName={styles.active}>
+                    {album.name}
+                  </NavLink>
+                </li>
+              );
+            })
+            }
+          </ul>
+        </article>
+      
       :
-      ShowLoader()
+        <article className={"article"}>
+      <ShowLoader />
+      </article>
+    
   }
 }
 

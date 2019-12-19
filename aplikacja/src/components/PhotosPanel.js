@@ -19,7 +19,7 @@ class PhotosPanel extends React.Component {
 
     render() {
         return this.state.photos ?
-            <main className={"main"}>
+            <article className={"article"}>
                 <h1>Hello, check photos!</h1>
                 {this.state.photos.map(photo => {
                     return (
@@ -28,9 +28,13 @@ class PhotosPanel extends React.Component {
                         </li>
                     );
                 })}
-            </main>
+            </article>
+
             :
-            ShowLoader()
+            <article className={"article"}>
+                <ShowLoader />
+            </article>
+
     }
 }
 
