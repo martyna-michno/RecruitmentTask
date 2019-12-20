@@ -13,3 +13,19 @@
   z-index: 5;
   padding-left: 200px;
 }
+
+@media all and (max-width: 500px) {
+
+  .appbar {
+    padding-left: 150px;
+  }
+
+}
+
+@media all and (min-width: 500px) {
+  
+  .appbar {
+    padding-left: 200px;
+  }
+
+}
