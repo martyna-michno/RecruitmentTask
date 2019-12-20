@@ -6,7 +6,7 @@ export const ShowLoader = () => {
         <div className="loader">
             <Loader
                 type="Oval"
-                color="#aff700"
+                color="rgb(81, 163, 235)"
                 height={150}
                 width={150}
                 timeout={0}

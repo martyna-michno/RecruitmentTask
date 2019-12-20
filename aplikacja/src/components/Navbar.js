@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { fetchAllUsers } from "../services/AllUsersService";
+import { Icon}  from 'semantic-ui-react'
 
 class Navbar extends React.Component {
   state = {
@@ -20,7 +21,7 @@ class Navbar extends React.Component {
     return (
       <nav className={styles.sidenav}>
         <ul className={styles.links}>
-          <li><NavLink activeClassName={styles.active} to={"/home"} className={styles.link}>HOME</NavLink></li>
+          <li><NavLink activeClassName={styles.active} to={"/home"} className={styles.link}><p><Icon name='home' size="big"/></p>Home</NavLink></li>
           {this.state.users.map(user => {
             return (
               <li>

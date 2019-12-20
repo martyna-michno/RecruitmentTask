@@ -7,7 +7,7 @@ const Appbar = () => {
     <>
     <header className={styles.appbar}>
       <p>
-        XYZ 
+        XyZ 
       <Icon name='photo' size="small"/>
       </p>
     </header>

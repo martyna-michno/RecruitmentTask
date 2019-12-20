@@ -4,6 +4,7 @@ import { fetchAlbums } from "../services/AlbumsService";
 import { NavLink } from "react-router-dom";
 import styles from "./UserPanel.module.css";
 import { ShowLoader } from "./Loader.js"
+import { Button, Header, Image, Modal } from 'semantic-ui-react'
 class UserPanel extends React.Component {
 
   constructor(props) {
@@ -37,29 +38,61 @@ class UserPanel extends React.Component {
 
   render() {
     return this.state.user && this.state.albums ?
-        <article className={"article"}>
-          <h1>Hello everyone, my name is {this.state.user.name}, what about you?</h1><ul>
-            {this.state.albums.map(album => {
-              return (
-                <li>
-                  <NavLink to={`/users/${this.state.user.id}/albums/${album.albumId}`}
-                    key={album.albumId}
-                    className={styles.album}
-                    activeClassName={styles.active}>
-                    {album.name}
-                  </NavLink>
-                </li>
-              );
-            })
-            }
-          </ul>
-        </article>
-      
-      :
-        <article className={"article"}>
-      <ShowLoader />
+      <article className={"article"}>
+        <h1>Here are albums, which author is {this.state.user.name}. Enjoy :)</h1>
+        <Modal trigger={<Button>Show more info</Button>} closeIcon>
+          <Modal.Header>{this.state.user.name} ({this.state.user.username})</Modal.Header>
+          <Modal.Content image>
+            <Image centred wrapped size='medium' src='https://iupac.org/wp-content/uploads/2018/05/default-avatar.png' />
+            <Modal.Description>
+              <Header>Address:</Header>
+              <p>
+                Street: {this.state.user.street}
+        </p>
+        <p>
+                Suite: {this.state.user.suite}
+        </p>
+        <p>
+                City: {this.state.user.city}
+        </p>
+        <p>
+                Zipcode: {this.state.user.zipcode}
+        </p>
+        <Header>Information:</Header>
+        <p>
+            Phone: {this.state.user.phone}
+        </p>
+        <p>
+             Website: {this.state.user.website}
+        </p>
+        <p>
+             Company: {this.state.user.company}
+        </p>
+            </Modal.Description>
+          </Modal.Content>
+        </Modal>
+        <ul>
+          {this.state.albums.map(album => {
+            return (
+              <li>
+                <NavLink to={`/users/${this.state.user.id}/albums/${album.albumId}`}
+                  key={album.albumId}
+                  className={styles.album}
+                  activeClassName={styles.active}>
+                  {album.name}
+                </NavLink>
+              </li>
+            );
+          })
+          }
+        </ul>
       </article>
-    
+
+      :
+      <article className={"article"}>
+        <ShowLoader />
+      </article>
+
   }
 }
 
