@@ -1,3 +1,6 @@
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 export const fetchPhotos = (albumId) => {
     return fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
         .then(response => {

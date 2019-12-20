@@ -1,0 +1,16 @@
+.home {
+    display: inline-block;
+    margin: 0 auto;
+    flex-flow: column;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+}
+
+.main{
+    height: 100vh;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

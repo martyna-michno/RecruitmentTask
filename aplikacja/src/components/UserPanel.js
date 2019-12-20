@@ -44,7 +44,7 @@ class UserPanel extends React.Component {
         <Modal trigger={<Button color={"blue"}>Click here</Button>} closeIcon>
           <Modal.Header>{this.state.user.name} ({this.state.user.username})</Modal.Header>
           <Modal.Content image>
-            <Image centred wrapped size='medium' src='https://iupac.org/wp-content/uploads/2018/05/default-avatar.png' />
+            <Image centred="true" wrapped size='medium' src='https://iupac.org/wp-content/uploads/2018/05/default-avatar.png' />
             <Modal.Description>
               <Header>Address:</Header>
               <p>

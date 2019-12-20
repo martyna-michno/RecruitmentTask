@@ -1,3 +1,6 @@
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 function fetchUser(id) {
 
     return fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
