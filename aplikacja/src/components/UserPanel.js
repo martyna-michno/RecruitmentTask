@@ -76,9 +76,8 @@ class UserPanel extends React.Component {
         <ul className="links">
           {this.state.albums.map(album => {
             return (
-              <li>
+              <li key={album.albumId}>
                 <NavLink to={`/users/${this.state.user.id}/albums/${album.albumId}`}
-                  key={album.albumId}
                   className={styles.album}
                   activeClassName={styles.active}>
                   {album.name}

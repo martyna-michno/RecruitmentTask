@@ -21,16 +21,14 @@ class Navbar extends React.Component {
     return (
       <nav className={styles.sidenav}>
         <ul className={styles.links}>
-          <li><NavLink activeClassName={styles.active} to={"/home"} className={styles.link}><p><Icon name='home' size="big"/></p>Home</NavLink></li>
+          <NavLink activeClassName={styles.active} exact strict to={"/"} className={styles.link} key="home"><p><Icon name='home' size="big"/></p>Home</NavLink>
           {this.state.users.map(user => {
             return (
-              <li>
                 <NavLink activeClassName={styles.active} to={`/users/${user.id}/albums`}
                   key={user.id}
                   className={styles.link}>
                   {user.name}
                 </NavLink>
-              </li>
             );
           })}
         </ul>
