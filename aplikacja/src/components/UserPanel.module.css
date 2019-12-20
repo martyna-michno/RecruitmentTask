@@ -2,9 +2,10 @@
     color: black;
     text-decoration: none;
     padding: 10px;
-    display: block;
+    display: inline-block;
   }
 
-  .active{
-      text-decoration: underline;
+ .album:hover{
+      color: "rgb(81, 163, 235)";
+      font-weight: bold;
   }

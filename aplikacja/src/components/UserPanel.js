@@ -39,8 +39,9 @@ class UserPanel extends React.Component {
   render() {
     return this.state.user && this.state.albums ?
       <article className={"article"}>
-        <h1>Here are albums, which author is {this.state.user.name}. Enjoy :)</h1>
-        <Modal trigger={<Button>Show more info</Button>} closeIcon>
+        <h1>Here is list of albums, which author is {this.state.user.name}. Enjoy!</h1>
+        <h2>Do you know to see more information about this user?</h2>
+        <Modal trigger={<Button>Click here</Button>} closeIcon>
           <Modal.Header>{this.state.user.name} ({this.state.user.username})</Modal.Header>
           <Modal.Content image>
             <Image centred wrapped size='medium' src='https://iupac.org/wp-content/uploads/2018/05/default-avatar.png' />
@@ -71,7 +72,8 @@ class UserPanel extends React.Component {
             </Modal.Description>
           </Modal.Content>
         </Modal>
-        <ul>
+        <h3>Click on one album to see its photos:</h3>
+        <ul className="links">
           {this.state.albums.map(album => {
             return (
               <li>
@@ -87,13 +89,12 @@ class UserPanel extends React.Component {
           }
         </ul>
       </article>
-
       :
       <article className={"article"}>
         <ShowLoader />
       </article>
-
   }
-}
+  }
+
 
 export default UserPanel
