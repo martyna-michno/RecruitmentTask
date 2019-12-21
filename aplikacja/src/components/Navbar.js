@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { fetchAllUsers } from "../services/AllUsersService";
-import { Icon}  from 'semantic-ui-react'
+import { Icon }  from 'semantic-ui-react'
 
 class Navbar extends React.Component {
   state = {
