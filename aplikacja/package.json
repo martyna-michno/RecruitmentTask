@@ -9,6 +9,7 @@
     "es6-promise": "^4.2.8",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.12.0",
+    "react-app-polyfill": "^1.0.5",
     "react-dom": "^16.12.0",
     "react-loader-spinner": "^3.1.5",
     "react-router-dom": "^5.1.2",
@@ -34,7 +35,9 @@
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "last 1 edge version",
+      "ie 11"
     ]
   }
 }
