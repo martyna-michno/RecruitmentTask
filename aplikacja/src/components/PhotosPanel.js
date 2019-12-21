@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchPhotos } from '../services/PhotosService';
+import { fetchAlbum } from '../services/AlbumsService';
 import { ShowLoader } from "./Loader.js";
 import { Card, Image} from 'semantic-ui-react';
 import ScrollUpButton from "react-scroll-up-button";
@@ -25,6 +26,7 @@ class PhotosPanel extends React.Component {
         super(props)
 
         this.state = {
+          album: ''
         };
     }
 
@@ -32,12 +34,15 @@ class PhotosPanel extends React.Component {
         fetchPhotos(this.props.match.params.albumId).then((photos) => {
             this.setState({ photos });
         });
+        fetchAlbum(this.props.match.params.albumId).then((album) => {
+          this.setState({ album });
+      });
     }
 
     render() {
         return this.state.photos ?
             <article className={"article"}>
-                <h1 style={{textAlign: "center"}}>Hello, check photos!</h1>
+                <h1 style={{textAlign: "center"}}>Photos of "{this.state.album.name}" album:</h1>
                 <Card.Group centered>
                 {this.state.photos.map(photo => (
                   <Photo

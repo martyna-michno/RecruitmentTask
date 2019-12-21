@@ -18,3 +18,18 @@ export const fetchAlbums = id => {
             })
         })
 }
+
+export const fetchAlbum = albumId => {
+    return fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(album => {
+                return {
+                    name: album.title
+                }
+        }
+        )
+}
