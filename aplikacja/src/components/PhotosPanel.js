@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { fetchPhotos } from '../services/PhotosService';
-import { ShowLoader } from "./Loader.js"
-import { Card, Image} from 'semantic-ui-react'
+import { ShowLoader } from "./Loader.js";
+import { Card, Image} from 'semantic-ui-react';
+import ScrollUpButton from "react-scroll-up-button";
 
 const Photo = props => {
     const {
@@ -47,6 +48,11 @@ class PhotosPanel extends React.Component {
                   />
                 ))}
               </Card.Group>
+              <div>
+        <ScrollUpButton 
+        style={{height: 35, width: 35}} />
+      </div>
+ 
             </article>
 
             :

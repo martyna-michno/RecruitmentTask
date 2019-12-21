@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import styles from "./UserPanel.module.css";
 import { ShowLoader } from "./Loader.js"
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import ScrollUpButton from "react-scroll-up-button";
 class UserPanel extends React.Component {
 
   constructor(props) {
@@ -87,6 +88,8 @@ class UserPanel extends React.Component {
           })
           }
         </ul>
+        <ScrollUpButton 
+        style={{height: 35, width: 35}} />
       </article>
       :
       <article className={"article"}>
