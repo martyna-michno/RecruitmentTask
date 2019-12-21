@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./Appbar.module.css";
 import { Icon } from 'semantic-ui-react';
 
-const Appbar = () => {
+function Appbar(){
   return (
     <>
     <header className={styles.appbar}>

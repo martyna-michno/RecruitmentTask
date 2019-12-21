@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Home.module.css'
 import ScrollUpButton from "react-scroll-up-button";
 
-const Home = () => {
+function Home(){
 
 return(
     <main className={styles.main}>

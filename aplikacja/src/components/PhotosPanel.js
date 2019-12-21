@@ -5,7 +5,7 @@ import { ShowLoader } from "./Loader.js";
 import { Card, Image} from 'semantic-ui-react';
 import ScrollUpButton from "react-scroll-up-button";
 
-const Photo = props => {
+function Photo(props){
     const {
       picture,
       name

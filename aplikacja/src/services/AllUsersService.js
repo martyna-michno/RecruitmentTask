@@ -1,7 +1,7 @@
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
-export const fetchAllUsers = () => {
+export function fetchAllUsers(){
     return fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => {
         if (response.ok) {

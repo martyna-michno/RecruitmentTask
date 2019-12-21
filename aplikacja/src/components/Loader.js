@@ -1,7 +1,7 @@
 import React from 'react'
 import Loader from "react-loader-spinner";
 
-export const ShowLoader = () => {
+export function ShowLoader(){
     return (
         <div className="loader">
             <Loader
