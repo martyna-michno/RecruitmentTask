@@ -1,5 +1,5 @@
 import React from 'react';
-import fetchUser from "../services/UserService";
+import { fetchUser }  from "../services/UserService";
 import { fetchAlbums } from "../services/AlbumsService";
 import { NavLink } from "react-router-dom";
 import styles from "./UserPanel.module.css";

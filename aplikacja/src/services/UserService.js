@@ -1,7 +1,7 @@
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
-function fetchUser(id) {
+export const fetchUser = id => {
 
     return fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
         .then(response => {
@@ -27,4 +27,3 @@ function fetchUser(id) {
         )
 }
 
-export default fetchUser
