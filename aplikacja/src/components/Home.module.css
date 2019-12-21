@@ -2,12 +2,14 @@
     display: inline-block;
     margin: 0 auto;
     flex-flow: column;
-    border: 1px solid black;
     padding: 20px;
     text-align: center;
+    -webkit-box-shadow: 15px 15px 32px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 15px 15px 32px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 15px 32px -10px rgba(0, 0, 0, 0.75);
 }
 
-.main{
+.main {
     height: calc(100vh - 50px);
     margin-top: 50px;
     display: flex;
