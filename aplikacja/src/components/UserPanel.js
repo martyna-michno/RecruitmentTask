@@ -40,7 +40,7 @@ class UserPanel extends React.Component {
   render() {
     return this.state.user && this.state.albums ?
       <article className={"article"}>
-        <h1>Here is list of albums, which author is {this.state.user.name}. Enjoy!</h1>
+        <h1>{this.state.user.name}'s albums.</h1>
         <h2>Do you want to see more information about this user?</h2>
         <Modal trigger={<Button color={"blue"}>Click here</Button>} closeIcon>
           <Modal.Header>{this.state.user.name} ({this.state.user.username})</Modal.Header>
