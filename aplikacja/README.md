@@ -1,10 +1,8 @@
-## Zadanie rekrutacyjne:
-### Aplikacja XyZ, która umozliwia przeglądanie profili uzytkowników, albumów oraz zdjęć w tych albumach.
-W celu uruchomienia projektu nalezy sciagnac repozytorium:
-##### https://github.com/martyna-michno/zadanieRekrutacyjne
-Za pomocą polecenia "git clone *link url* . " w utworzonym przez siebie na komputerze folderze.
-Następnie (mając zainstalowany node i npm) w terminalu nalezy uzyc polecenia:
-#### npm install
-w celu instalacji wszystkich niezbędnych paczek potrzebnych do uruchomienia projektu. 
-W celu uruchomienia aplikacji w terminalu nalezy wpisać komendę:
-#### npm start
+## Recruitment task:
+### The XyZ application that lets you view user profiles, albums and photos in these albums.
+To run the project:
+ 1. Download the repository:
+Using terminal get into the folder that you created for example on desktop. Clone repository to it using "git clone https://github.com/martyna-michno/zadanieRekrutacyjne ." command.
+ 2. Then (if you have npm and node installed of course) use the **npm install** command
+to install all available packages needed to run the project.
+ 3. In order to run the application, the **npm start** command should be included.
